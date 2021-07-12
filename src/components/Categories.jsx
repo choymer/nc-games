@@ -17,7 +17,7 @@ const Categories = () => {
         <div class="dropdown-content">
           {categories.map((category) => {
             return (
-              <a href={`/items/categories/${category.slug}`}>
+              <a href={`/reviews/categories/${category.slug}`}>
                 {category.slug}
               </a>
             );

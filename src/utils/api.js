@@ -10,11 +10,15 @@ return data.categories;
 }
 
 
-export const getReviews = async () => {
-    const { data } = await gamesApi.get('/reviews')
+export const getReviews = async (categories) => {
+    const { data } = await gamesApi.get('/reviews', {
+        params: {
+            category: categories,
+
+        }
+    })
     return data.reviews;
 }
 
 
 
-getCategories()
