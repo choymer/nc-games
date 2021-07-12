@@ -1,3 +1,4 @@
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -8,7 +9,11 @@ function App() {
     <div className="App">
      <Navbar />
      <Header />
+     <Switch>
+       <Route exact path="/reviews">
      <Reviews />
+     </Route>
+     </Switch>
     </div>
   );
 }

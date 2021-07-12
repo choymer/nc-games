@@ -22,3 +22,12 @@
 .content {
   background-color: rgb(62, 201, 143);
 }
+
+img {
+  width: 100px;
+}
+
+li {
+  border: solid 1px;
+  list-style-type: none;
+}
