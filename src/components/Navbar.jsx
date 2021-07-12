@@ -9,6 +9,7 @@ const Navbar = () => {
             <p>Reviews</p>
             </Link>
             <Categories />
+            
         </nav>
     );
 };

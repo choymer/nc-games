@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Reviews from './components/Reviews';
+import ReviewById from './components/ReviewById';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
      </Route>
      <Route exact path="/reviews/categories/:categories">
      <Reviews />
+     </Route>
+     <Route exact path="/reviews/:review_id">
+     <ReviewById />
      </Route>
      </Switch>
     </div>

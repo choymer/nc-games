@@ -20,5 +20,10 @@ export const getReviews = async (categories) => {
     return data.reviews;
 }
 
+export const getReviewById = async (review_id) => {
+    const { data } = await gamesApi.get(`/reviews/${review_id}`)
+    return data.reviews[0];
+}
+
 
 
