@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Categories from './Categories';
 
 const Navbar = () => {
     return (
@@ -7,6 +8,7 @@ const Navbar = () => {
             <Link to="/reviews">
             <p>Reviews</p>
             </Link>
+            <Categories />
         </nav>
     );
 };
