@@ -20,6 +20,9 @@ function App() {
      <Route exact path="/reviews/:review_id">
      <ReviewById />
      </Route>
+     <Route exact path="/reviews/:review_id/comments">
+     <ReviewById />
+     </Route>
      </Switch>
     </div>
   );
