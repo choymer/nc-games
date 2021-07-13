@@ -20,7 +20,7 @@ const AddVotes = ({votes,reviewId}) => {
         <div>
         <p>Votes: {votes + incVotes}</p>
         {hasError && <p>Oops! Something wrong happened, check your connection and try again!</p>}
-        <button onClick={incrementVotes}>Add votes</button>
+        <button disabled={incVotes > 0} onClick={incrementVotes}>Add votes</button>
         </div>
     );
 };

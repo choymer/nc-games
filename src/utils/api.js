@@ -39,3 +39,7 @@ export const patchVotes = async (review_id, increment) => {
     console.log(data)
 }
 
+export const getAllUsers = async () => {
+    const { data } = await gamesApi.get('/users')
+    return data.users;
+}

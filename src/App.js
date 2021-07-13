@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Reviews from './components/Reviews';
 import ReviewById from './components/ReviewById';
+import UserList from './components/UserList';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
      </Route>
      <Route exact path="/reviews/:review_id/comments">
      <ReviewById />
+     </Route>
+     <Route exact path="/users">
+     <UserList />
      </Route>
      </Switch>
     </div>
