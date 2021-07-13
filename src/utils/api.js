@@ -32,3 +32,10 @@ export const getCommentsByReviewId =  async (review_id) => {
 }
 
 
+export const patchVotes = async (review_id, increment) => {
+    const { data } = await gamesApi.patch(`/reviews/${review_id}`, {
+        inc_votes: increment,
+    })
+    console.log(data)
+}
+

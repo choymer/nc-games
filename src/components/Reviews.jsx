@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getReviews } from '../utils/api';
+import AddVotes from './AddVotes';
 
 
 const Reviews = () => {
@@ -27,7 +28,7 @@ const Reviews = () => {
                   <img src={ review.review_img_url} alt={ review.title } />
                   <p>Category: {review.category}</p>
                   <p>Owner: {review.owner}</p>
-                  <p>Votes: {review.votes}</p>
+                  <AddVotes votes = {review.votes} reviewId = {review.review_id}/>
                   <p>Date: {review.created_at}</p>
                   <Link to={`../../reviews/${review.review_id}`}>
                   See review

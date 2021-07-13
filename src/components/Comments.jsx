@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { getCommentsByReviewId } from '../utils/api';
 
 const Comments = ({review_id}) => {
-    console.log(review_id, 'commentes')
 
     const [comments, setComments] = useState([]);
-
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(()=>{
