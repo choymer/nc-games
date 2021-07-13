@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getReviews } from '../utils/api';
 
+
 const Reviews = () => {
 
     const [reviews, setReviews] = useState([]);
@@ -28,7 +29,7 @@ const Reviews = () => {
                   <p>Owner: {review.owner}</p>
                   <p>Votes: {review.votes}</p>
                   <p>Date: {review.created_at}</p>
-                  <Link to={`reviews/${review.review_id}`}>
+                  <Link to={`../../reviews/${review.review_id}`}>
                   See review
                   </Link>    
               </li>)
