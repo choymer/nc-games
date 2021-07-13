@@ -7,6 +7,7 @@ import { useContext } from 'react';
 const Navbar = () => {
 
     const { user } = useContext(UserContext)
+    console.log(user)
 
     return (
         <nav className="nav">
@@ -22,7 +23,7 @@ const Navbar = () => {
             <div>
             <Link>
             <span>{user.username}</span>
-            <img src={user.name} alt={user.username} />
+            <img src={user.name} alt={user.avatar_url} />
             </Link>
             </div>
             

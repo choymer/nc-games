@@ -11,14 +11,14 @@ import { UserContext } from './contexts/User';
 
 function App() {
 
-  const [user, setUser] = useState (  {
+  const [user, setUser] = useState ({
     username: "jessjelly",
     avatar_url: "Jess Jelly",
     name: "https://s-media-cache-ak0.pinimg.com/564x/39/62/ec/3962eca164e60cf46f979c1f57d4078b.jpg"
-  })
+  }); 
 
   return (
-    <UserContext.Provider value={{user}}>
+    <UserContext.Provider value={{user, setUser}}>
     <div className="App">
      <Navbar />
      <Header />
