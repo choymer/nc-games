@@ -36,7 +36,7 @@ const Reviews = () => {
               </li>)
              })} 
             </ul>
-        </div>
+        </div>  
     );
 };
 

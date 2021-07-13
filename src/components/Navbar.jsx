@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Categories from './Categories';
+import { UserContext } from '../contexts/User';
+import { useContext } from 'react';
 
 const Navbar = () => {
+
+    const { user } = useContext(UserContext)
+
     return (
         <nav className="nav">
+            <div>
             <Link to="/reviews">
             <p>Reviews</p>
             </Link>
@@ -12,6 +18,14 @@ const Navbar = () => {
             <Link to="/users">
             <p>List of users</p>
             </Link>
+            </div>
+            <div>
+            <Link>
+            <span>{user.username}</span>
+            <img src={user.name} alt={user.username} />
+            </Link>
+            </div>
+            
         </nav>
     );
 };

@@ -43,3 +43,9 @@ export const getAllUsers = async () => {
     const { data } = await gamesApi.get('/users')
     return data.users;
 }
+
+export const getUserbyUsername = async (username) => {
+    const { data } = await gamesApi.get(`/users/${username}`)
+    console.log(data.users[0], 'from the api')
+    return data.users[0];
+}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllUsers } from '../utils/api';
+import { Link } from 'react-router-dom';
+
 
 
 const UserList = () => {
@@ -21,6 +23,9 @@ const UserList = () => {
                     return(
                     <li key={user.username}>
                         <p>User: {user.username}</p>
+                        <Link to={`/users/${user.username}`}>
+                  See more
+                  </Link>  
                     </li>)
                 })}
             </ul>
