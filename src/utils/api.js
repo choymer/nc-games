@@ -46,6 +46,12 @@ export const getAllUsers = async () => {
 
 export const getUserbyUsername = async (username) => {
     const { data } = await gamesApi.get(`/users/${username}`)
-    console.log(data.users[0], 'from the api')
     return data.users[0];
 }
+
+export const postCommentByReviewId = async (review_id, comment) => {
+    const { data } = await gamesApi.post(`/reviews/${review_id}/comments`, comment);
+    return data;
+}
+
+postCommentByReviewId()

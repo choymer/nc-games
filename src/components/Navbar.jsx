@@ -7,7 +7,7 @@ import { useContext } from 'react';
 const Navbar = () => {
 
     const { user } = useContext(UserContext)
-    console.log(user)
+    // console.log(user)
 
     return (
         <nav className="nav">
