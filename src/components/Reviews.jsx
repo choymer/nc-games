@@ -2,23 +2,25 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviews } from "../utils/api";
 import AddVotes from "./AddVotes";
+import SortBy from "./SortBy";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [sortBy, setSortBy] = useState(undefined);
   const { categories } = useParams();
-  //   console.log(categories, "categories");
 
   useEffect(() => {
-    getReviews(categories).then((reviewsFromApi) => {
+    getReviews(categories, sortBy).then((reviewsFromApi) => {
       setReviews(reviewsFromApi);
       setIsLoading(false);
     });
-  }, [categories]);
+  }, [categories, sortBy]);
 
   if (isLoading) return <p>Loading ...</p>;
   return (
     <div className="content">
+      <SortBy setSortBy={setSortBy} />
       <ul>
         {reviews.map((review) => {
           return (

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Categories from "./Categories";
 import { UserContext } from "../contexts/User";
 import { useContext } from "react";
-import SortBy from "./SortBy";
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
@@ -19,7 +18,6 @@ const Navbar = () => {
         <Link to="/users">
           <p>List of users</p>
         </Link>
-        <SortBy />
       </div>
 
       <div>

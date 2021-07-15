@@ -9,10 +9,11 @@ export const getCategories = async () => {
   return data.categories;
 };
 
-export const getReviews = async (categories) => {
+export const getReviews = async (categories, sortBy) => {
   const { data } = await gamesApi.get("/reviews", {
     params: {
       category: categories,
+      sort_by: sortBy,
     },
   });
   return data.reviews;
@@ -50,5 +51,6 @@ export const postCommentByReviewId = async (review_id, comment) => {
     `/reviews/${review_id}/comments`,
     comment
   );
+
   return data.comment;
 };

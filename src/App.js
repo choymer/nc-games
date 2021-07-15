@@ -28,6 +28,9 @@ function App() {
           <Route exact path="/reviews/categories/:categories">
             <Reviews />
           </Route>
+          <Route exact path="/reviews/sort_by/:columns">
+            <Reviews />
+          </Route>
           <Route exact path="/reviews/:review_id">
             <ReviewById />
           </Route>

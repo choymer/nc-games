@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-const SortBy = () => {
-  const [sorting, setSorting] = useState("");
+const SortBy = ({ setSortBy }) => {
+  // const [reviews, setReviews] = useState([]);
+  // const [sorting, setSorting] = useState("");
+
+  // useEffect(() => {
+  //   getReviews(sorting).then((reviewsFromApi) => {
+  //     setReviews(reviewsFromApi);
+  //   });
+  // }, [sorting]);
 
   const handle = (e) => {
-    setSorting(e.target.value);
+    setSortBy(e.target.value);
   };
-
-  useEffect(() => {}, []);
-
-  console.log(sorting, "sorting");
 
   return (
     <div>
@@ -22,15 +25,6 @@ const SortBy = () => {
         value="created_at"
       />
       <label htmlFor="created_at">Date</label>
-
-      <input
-        onChange={(e) => handle(e)}
-        type="checkbox"
-        id="comment_count"
-        name="sortGroup"
-        value="comment_count"
-      />
-      <label htmlFor="comment_count">Popularity</label>
 
       <input
         onChange={(e) => handle(e)}
