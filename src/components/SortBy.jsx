@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 const SortBy = ({ setSortBy }) => {
-  // const [reviews, setReviews] = useState([]);
-  // const [sorting, setSorting] = useState("");
-
-  // useEffect(() => {
-  //   getReviews(sorting).then((reviewsFromApi) => {
-  //     setReviews(reviewsFromApi);
-  //   });
-  // }, [sorting]);
-
   const handle = (e) => {
     setSortBy(e.target.value);
   };
@@ -19,7 +10,7 @@ const SortBy = ({ setSortBy }) => {
       <p>Sort By:</p>
       <input
         onChange={(e) => handle(e)}
-        type="checkbox"
+        type="radio"
         id="created_at"
         name="sortGroup"
         value="created_at"
@@ -28,7 +19,7 @@ const SortBy = ({ setSortBy }) => {
 
       <input
         onChange={(e) => handle(e)}
-        type="checkbox"
+        type="radio"
         id="votes"
         name="sortGroup"
         value="votes"

@@ -20,7 +20,7 @@ const Reviews = () => {
   if (isLoading) return <p>Loading ...</p>;
   return (
     <div className="content">
-      <SortBy setSortBy={setSortBy} />
+      {categories !== undefined ? null : <SortBy setSortBy={setSortBy} />}
       <ul>
         {reviews.map((review) => {
           return (
