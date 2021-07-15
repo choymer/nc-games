@@ -6,8 +6,8 @@ const SortBy = ({ setSortBy }) => {
   };
 
   return (
-    <div>
-      <p>Sort By:</p>
+    <div className="sort-container">
+      <p className="sort">Sort By:</p>
       <input
         onChange={(e) => handle(e)}
         type="radio"

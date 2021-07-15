@@ -19,20 +19,28 @@ const Reviews = () => {
 
   if (isLoading) return <p>Loading ...</p>;
   return (
-    <div className="content">
+    <div className="content review-content">
+      <h1>REVIEWS</h1>
       {categories !== undefined ? null : <SortBy setSortBy={setSortBy} />}
       <ul>
         {reviews.map((review) => {
           return (
             <li key={review.review_id}>
-              <p>Title:{review.title}</p>
-              <img src={review.review_img_url} alt={review.title} />
+              <p className="date">Date: {review.created_at}</p>
+              <img
+                className="review-img"
+                src={review.review_img_url}
+                alt={review.title}
+              />
+              <h2>{review.title}</h2>
               <p>Category: {review.category}</p>
               <p>Owner: {review.owner}</p>
               <AddVotes votes={review.votes} reviewId={review.review_id} />
-              <p>Date: {review.created_at}</p>
-              <p>Number of comments: {review.comment_count}</p>
-              <Link to={`../../reviews/${review.review_id}`}>See review</Link>
+
+              {/* <p>Number of comments: {review.comment_count}</p> */}
+              <Link to={`../../reviews/${review.review_id}`}>
+                See full review...
+              </Link>
             </li>
           );
         })}

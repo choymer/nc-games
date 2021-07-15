@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { UserContext } from "../contexts/User";
 import { useContext } from "react";
 import { postCommentByReviewId } from "../utils/api";
+import { Form, Button } from "react-bootstrap";
 
 const CommentsForm = ({ review_id, getComments }) => {
   //importing the user object to use it on the form.
@@ -39,25 +40,39 @@ const CommentsForm = ({ review_id, getComments }) => {
 
   return (
     <div>
-      <form
+      <hr />
+      <h1>POST A REVIEW</h1>
+      <Form
         onSubmit={(e) => {
           submit(e);
         }}
       >
-        <label htmlFor="username">Username: </label>
-        <input type="text" id="username" value={user.username} />
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label htmlFor="username">Username: </Form.Label>
+          <Form.Control
+            className="name-input"
+            type="text"
+            id="username"
+            value={user.username}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Label htmlFor="body">Comments: </Form.Label>
+          <Form.Control
+            onChange={(e) => handle(e)}
+            type="text"
+            id="body"
+            value={comment.body}
+            autoComplete="off"
+            as="textarea"
+            rows={3}
+          />{" "}
+        </Form.Group>
 
-        <label htmlFor="body">Comments: </label>
-        <input
-          onChange={(e) => handle(e)}
-          type="text"
-          id="body"
-          value={comment.body}
-          autoComplete="off"
-        />
-
-        <button>Post comment</button>
-      </form>
+        <Button variant="primary" type="submit">
+          Post comment
+        </Button>
+      </Form>
     </div>
   );
 };

@@ -17,9 +17,10 @@ const ReviewById = () => {
 
   if (isLoading) return <p>Loading ...</p>;
   return (
-    <div>
+    <div className="content">
+      <h1>REVIEW</h1>
       <h2>{reviewById.title}</h2>
-      <p>{reviewById.review_body}</p>
+      <p className="review-body">{reviewById.review_body}</p>
       <Comments review_id={review_id} />
     </div>
   );

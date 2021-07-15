@@ -15,10 +15,11 @@ const UserList = () => {
   if (isLoading) return <p>Loading ...</p>;
   return (
     <div className="content">
+      <h1>USER LIST</h1>
       <ul>
         {users.map((user) => {
           return (
-            <li key={user.username}>
+            <li className="user-list" key={user.username}>
               <p>User: {user.username}</p>
               <Link to={`/users/${user.username}`}>See more</Link>
             </li>

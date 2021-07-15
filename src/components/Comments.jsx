@@ -26,11 +26,12 @@ const Comments = ({ review_id }) => {
     <>
       <CommentsForm review_id={review_id} getComments={getComments} />
       <div>
-        <h1>Comments:</h1>
+        <hr />
+        <h1>COMMENTS</h1>
         <ul>
           {comments.map((comment) => {
             return (
-              <li key={comment.comment_id}>
+              <li className="comment" key={comment.comment_id}>
                 <h2>Author: {comment.author}</h2>
                 <p>Comment: {comment.body}</p>
               </li>

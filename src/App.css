@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import "bootstrap/dist/css/bootstrap.min.css";
 .App {
-  background-color: rgb(247, 227, 49);
+  background-color: #eeeeee;
   text-align: center;
   display: grid;
   grid-template-columns: 100%;
@@ -16,22 +17,42 @@
 
 /********** ELEMENT TAGS *******/
 
+h1 {
+  font-size: 32px;
+  margin: 30px auto;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px;
+}
+
 img {
   width: 100px;
 }
 
 li {
   border: solid 1px;
+  border-radius: 10px;
   list-style-type: none;
+  padding: 20px;
+  margin: 20px;
+}
+
+ul {
+  padding: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-p {
-  line-height: 2;
-  margin: 50px;
+hr {
+  border-style: none;
+  border-top: 12px dotted #00adb5;
+  background-color: #fff;
+  width: 30%;
+  margin: auto;
 }
 
 /****** NAVBAR ********/
@@ -102,14 +123,91 @@ p {
   padding: 5%;
 }
 
+/********  SORT */
+
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sort {
+  display: inline-flex;
+  margin-right: 30px;
+}
+
+.sort-container label {
+  margin-left: 5px;
+  padding-right: 15px;
+}
+
+/* ******REVIEW */
+
+.review-img {
+  width: 130px;
+  margin: 15px;
+}
+
+.votes-button {
+  margin: 15px;
+}
+
+.date {
+  text-align: right;
+}
+
+.review-body,
+.welcome-para {
+  padding: 2% 10%;
+  line-height: 2;
+}
+
+/***** FORM *****/
+
+form {
+  margin: 3% 10%;
+}
+
+.name-input {
+  margin: auto;
+  text-align: center;
+  width: 20%;
+}
+
+/****User list****/
+
+.user-list {
+  width: 30%;
+  display: block;
+  margin: 15px auto;
+}
+
+.user-list:hover {
+  box-shadow: 1px 0px 30px 8px rgba(0, 0, 0, 0.72);
+}
+
+/**** COMMENTS ****/
+
+.comment {
+  width: 80%;
+  margin: 15px auto;
+}
+
+.avatar {
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto;
+}
+
 .header {
   background-color: #00adb5;
 }
 
 .content {
+  margin: 15px;
   background-color: #eeeeee;
 }
 
 .footer {
   background-color: #00adb5;
+  padding-top: 75px;
 }
