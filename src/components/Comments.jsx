@@ -6,6 +6,8 @@ const Comments = ({ review_id }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  //Below function is for passing as a props to commentsForm and use it
+
   function getComments() {
     getCommentsByReviewId(review_id).then((getCommentsFromApi) => {
       setComments(getCommentsFromApi);

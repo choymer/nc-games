@@ -50,6 +50,5 @@ export const postCommentByReviewId = async (review_id, comment) => {
     `/reviews/${review_id}/comments`,
     comment
   );
-  console.log(data.comment);
   return data.comment;
 };

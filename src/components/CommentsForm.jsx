@@ -15,7 +15,7 @@ const CommentsForm = ({ review_id, getComments }) => {
     body: "",
   });
 
-  //Handle the changes on the input-text file.
+  //Handle the changes on the input-text file, copying the object once the submit button has clicked, as we can't mutate the state.
 
   const handle = (e) => {
     const newComment = { ...comment };
@@ -33,11 +33,10 @@ const CommentsForm = ({ review_id, getComments }) => {
         username: user.username,
         body: "",
       });
-      getComments();
+      getComments(); //Calling the function here to fetch all comments.
     });
   };
 
-  console.log(comment);
   return (
     <div>
       <form

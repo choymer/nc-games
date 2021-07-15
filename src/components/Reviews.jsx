@@ -29,6 +29,7 @@ const Reviews = () => {
               <p>Owner: {review.owner}</p>
               <AddVotes votes={review.votes} reviewId={review.review_id} />
               <p>Date: {review.created_at}</p>
+              <p>Number of comments: {review.comment_count}</p>
               <Link to={`../../reviews/${review.review_id}`}>See review</Link>
             </li>
           );

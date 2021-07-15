@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getReviewById } from "../utils/api";
 import Comments from "./Comments";
-import CommentsForm from "./CommentsForm";
 
 const ReviewById = () => {
   const [reviewById, setReviewById] = useState([]);
@@ -21,7 +20,6 @@ const ReviewById = () => {
     <div>
       <h2>{reviewById.title}</h2>
       <p>{reviewById.review_body}</p>
-      {/* <CommentsForm review_id={review_id}/> */}
       <Comments review_id={review_id} />
     </div>
   );
