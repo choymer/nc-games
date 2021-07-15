@@ -6,23 +6,22 @@ import { useContext } from "react";
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
-  // console.log(user)
 
   return (
     <nav className="nav">
-      <div>
+      <div className="nav__left">
         <Link to="/reviews">
-          <p>Reviews</p>
+          <p className="nav__link">Reviews</p>
         </Link>
         <Categories />
         <Link to="/users">
-          <p>List of users</p>
+          <p className="nav__link">User List</p>
         </Link>
       </div>
 
       <div>
-        <Link>
-          <span>{user.username}</span>
+        <Link className="nav__link">
+          {/* <span>{user.username}</span> */}
           <img src={user.name} alt={user.avatar_url} />
         </Link>
       </div>

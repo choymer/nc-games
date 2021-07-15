@@ -8,6 +8,9 @@ import UserList from "./components/UserList";
 import User from "./components/User";
 import { useState } from "react";
 import { UserContext } from "./contexts/User";
+import NotFound from "./components/NotFound";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
 
 function App() {
   const [user, setUser] = useState({
@@ -43,7 +46,14 @@ function App() {
           <Route exact path="/users/:username">
             <User />
           </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/">
+            <NotFound />
+          </Route>
         </Switch>
+        <Footer />
       </div>
     </UserContext.Provider>
   );

@@ -1,30 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
 .App {
   background-color: rgb(247, 227, 49);
   text-align: center;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: min-content min-content auto;
-  grid-template-areas: 
-  "nav"
-  "header"
-  "content";
+  grid-template-rows: min-content min-content auto min-content;
+  grid-template-areas:
+    "nav"
+    "header"
+    "content"
+    "footer";
   min-height: 100vh;
+  font-family: "Merriweather", serif;
 }
 
-.nav {
-  background-color: rgba(204, 0, 255, 0.555);
-  display: flex;
-  justify-content: space-between;
-
-}
-
-.header {
-  background-color: rgb(245, 191, 41);
-}
-
-.content {
-  background-color: rgb(62, 201, 143);
-}
+/********** ELEMENT TAGS *******/
 
 img {
   width: 100px;
@@ -35,8 +25,19 @@ li {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 2;
+  margin: 50px;
+}
+
+/****** NAVBAR ********/
+
 .dropbtn {
-  background-color: #04aa6d;
+  background-color: #00adb5;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -47,6 +48,7 @@ li {
 .dropdown {
   position: relative;
   display: inline-block;
+  top: 40px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -78,5 +80,36 @@ li {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #03ccd6;
+}
+
+.nav {
+  background-color: #aad8d3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__left {
+  display: inline-flex;
+}
+
+.nav__link {
+  color: white;
+}
+
+.nav__link img {
+  border-radius: 50%;
+  padding: 5%;
+}
+
+.header {
+  background-color: #00adb5;
+}
+
+.content {
+  background-color: #eeeeee;
+}
+
+.footer {
+  background-color: #00adb5;
 }
