@@ -3,6 +3,7 @@ import { getUserbyUsername } from "../utils/api";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../contexts/User";
 import { Button } from "react-bootstrap";
+import SpinnerLoad from "./SpinnerLoad";
 
 const User = () => {
   const { setUser } = useContext(UserContext);
@@ -17,7 +18,7 @@ const User = () => {
     });
   }, [username]);
 
-  if (isLoading) return <p>Loading ...</p>;
+  if (isLoading) return <SpinnerLoad />;
   return (
     <div className="content">
       <h2>Username: {getUser.username}</h2>

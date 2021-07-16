@@ -198,6 +198,10 @@ form {
   margin: 20px auto;
 }
 
+.spin {
+  margin: 30px;
+}
+
 .header {
   background-color: #00adb5;
 }

@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { getReviews } from "../utils/api";
 import AddVotes from "./AddVotes";
 import SortBy from "./SortBy";
+import SpinnerLoad from "./SpinnerLoad";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -17,7 +18,7 @@ const Reviews = () => {
     });
   }, [categories, sortBy]);
 
-  if (isLoading) return <p>Loading ...</p>;
+  if (isLoading) return <SpinnerLoad />;
   return (
     <div className="content review-content">
       <h1>REVIEWS</h1>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getCommentsByReviewId } from "../utils/api";
 import CommentsForm from "./CommentsForm";
+import SpinnerLoad from "./SpinnerLoad";
 
 const Comments = ({ review_id }) => {
   const [comments, setComments] = useState([]);
@@ -21,7 +22,7 @@ const Comments = ({ review_id }) => {
       setIsLoading(false);
     });
   }, [review_id]);
-  if (isLoading) return <p>Loading ...</p>;
+  if (isLoading) return <SpinnerLoad />;
   return (
     <>
       <CommentsForm review_id={review_id} getComments={getComments} />

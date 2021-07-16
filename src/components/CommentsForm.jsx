@@ -41,11 +41,12 @@ const CommentsForm = ({ review_id, getComments }) => {
   return (
     <div>
       <hr />
-      <h1>POST A REVIEW</h1>
+      <h1>POST A COMMENT</h1>
       <Form
         onSubmit={(e) => {
           submit(e);
         }}
+        REVIEW
       >
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label htmlFor="username">Username: </Form.Label>
@@ -70,7 +71,7 @@ const CommentsForm = ({ review_id, getComments }) => {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Post comment
+          Submit
         </Button>
       </Form>
     </div>

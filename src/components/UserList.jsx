@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getAllUsers } from "../utils/api";
 import { Link } from "react-router-dom";
+import SpinnerLoad from "./SpinnerLoad";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -12,7 +13,7 @@ const UserList = () => {
       setIsLoading(false);
     });
   }, []);
-  if (isLoading) return <p>Loading ...</p>;
+  if (isLoading) return <SpinnerLoad />;
   return (
     <div className="content">
       <h1>USER LIST</h1>

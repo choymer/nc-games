@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getReviewById } from "../utils/api";
 import Comments from "./Comments";
+import SpinnerLoad from "./SpinnerLoad";
 
 const ReviewById = () => {
   const [reviewById, setReviewById] = useState([]);
@@ -15,7 +16,7 @@ const ReviewById = () => {
     });
   }, [review_id]);
 
-  if (isLoading) return <p>Loading ...</p>;
+  if (isLoading) return <SpinnerLoad />;
   return (
     <div className="content">
       <h1>REVIEW</h1>
