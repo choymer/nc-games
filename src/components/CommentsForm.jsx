@@ -8,6 +8,7 @@ const CommentsForm = ({ review_id, getComments }) => {
   //importing the user object to use it on the form.
 
   const { user } = useContext(UserContext);
+  const [hasError, setHasError] = useState(false);
 
   //As the user is selected, when a post is submmited the username is filled by default with the user {username:""}
 
@@ -29,13 +30,19 @@ const CommentsForm = ({ review_id, getComments }) => {
   const submit = (e) => {
     e.preventDefault();
 
-    postCommentByReviewId(review_id, comment).then((postDataToApi) => {
-      setComment({
-        username: user.username,
-        body: "",
-      });
-      getComments(); //Calling the function here to fetch all comments.
-    });
+    {
+      const regex = /^[^\s]+(\s+[^\s]+)*$/;
+      comment.body.length === 0
+        ? setHasError(true)
+        : postCommentByReviewId(review_id, comment).then((postDataToApi) => {
+            setComment({
+              username: user.username,
+              body: "",
+            });
+            setHasError(false);
+            getComments(); //Calling the function here to fetch all comments.
+          });
+    }
   };
 
   return (
@@ -69,6 +76,7 @@ const CommentsForm = ({ review_id, getComments }) => {
             rows={3}
           />{" "}
         </Form.Group>
+        {hasError && <p>Please fill the form before submitting</p>}
 
         <Button variant="primary" type="submit">
           Submit
