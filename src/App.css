@@ -231,3 +231,49 @@ small {
   font-size: 25px;
   margin: 20px auto;
 }
+
+@media only screen and (max-width: 425px) {
+  .btn {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  p,
+  a,
+  .review-body {
+    font-size: 12px;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .user-list {
+    width: 100%;
+  }
+
+  .nav__link {
+    font-size: 1rem;
+  }
+
+  .sort {
+    font-size: 1rem;
+  }
+
+  .name-input {
+    width: 100%;
+  }
+
+  hr {
+    border-top: 10px dotted #00adb5;
+    width: 50%;
+    margin: 30px auto;
+  }
+}
