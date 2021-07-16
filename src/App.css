@@ -246,7 +246,8 @@ small {
   p,
   a,
   .review-body,
-  .btn {
+  .btn,
+  .welcome-para {
     font-size: 12px;
   }
 
