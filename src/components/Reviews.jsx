@@ -9,13 +9,19 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setSortBy] = useState(undefined);
+  const [errMessage, setErrMessage] = useState(null);
   const { categories } = useParams();
 
   useEffect(() => {
-    getReviews(categories, sortBy).then((reviewsFromApi) => {
-      setReviews(reviewsFromApi);
-      setIsLoading(false);
-    });
+    getReviews(categories, sortBy)
+      .then((reviewsFromApi) => {
+        setReviews(reviewsFromApi);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setErrMessage(err.response.data.msg);
+        setIsLoading(false);
+      });
   }, [categories, sortBy]);
 
   if (isLoading) return <SpinnerLoad />;
@@ -23,29 +29,36 @@ const Reviews = () => {
     <div className="content review-content">
       <h1>REVIEWS</h1>
       {categories !== undefined ? null : <SortBy setSortBy={setSortBy} />}
-      <ul>
-        {reviews.map((review) => {
-          return (
-            <li key={review.review_id}>
-              <p className="date">Date: {review.created_at}</p>
-              <img
-                className="review-img"
-                src={review.review_img_url}
-                alt={review.title}
-              />
-              <h2>{review.title}</h2>
-              <p>Category: {review.category}</p>
-              <p>Owner: {review.owner}</p>
-              <AddVotes votes={review.votes} reviewId={review.review_id} />
 
-              {/* <p>Number of comments: {review.comment_count}</p> */}
-              <Link to={`/reviews/${review.review_id}`}>
-                See full review...
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      {errMessage ? (
+        <p className="errMsg">{errMessage} 😥</p>
+      ) : (
+        <>
+          <ul>
+            {reviews.map((review) => {
+              return (
+                <li key={review.review_id}>
+                  <p className="date">Date: {review.created_at}</p>
+                  <img
+                    className="review-img"
+                    src={review.review_img_url}
+                    alt={review.title}
+                  />
+                  <h2>{review.title}</h2>
+                  <p>Category: {review.category}</p>
+                  <p>Owner: {review.owner}</p>
+                  <AddVotes votes={review.votes} reviewId={review.review_id} />
+
+                  {/* <p>Number of comments: {review.comment_count}</p> */}
+                  <Link to={`/reviews/${review.review_id}`}>
+                    See full review...
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      )}
     </div>
   );
 };

@@ -26,7 +26,7 @@ const ReviewById = () => {
   return (
     <div className="content">
       {errMessage ? (
-        <p className="errMsg">{errMessage}😥</p>
+        <p className="errMsg">{errMessage} 😥</p>
       ) : (
         <>
           <h1>REVIEW</h1>
