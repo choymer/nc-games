@@ -159,6 +159,7 @@ hr {
 
 .review-body,
 .welcome-para {
+  font-size: 20px;
   padding: 2% 10%;
   line-height: 2;
 }

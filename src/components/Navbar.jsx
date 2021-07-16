@@ -20,8 +20,10 @@ const Navbar = () => {
       </div>
 
       <div className="nav__link">
-        {/* <span>{user.username}</span> */}
-        <img src={user.name} alt={user.avatar_url} />
+        <Link to={`/`}>
+          {/* <span>{user.username}</span> */}
+          <img src={user.name} alt={user.avatar_url} />
+        </Link>
       </div>
     </nav>
   );

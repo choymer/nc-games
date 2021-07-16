@@ -8,7 +8,9 @@ const Home = () => {
     <div>
       <h1>WELCOME TO NC GAMES</h1>
 
-      <p>Hello, {user.avatar_url}, how are you today?</p>
+      <p className="welcome-para">
+        Hello {user.avatar_url}, how are you today? 😄
+      </p>
 
       <p className="welcome-para">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

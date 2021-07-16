@@ -31,7 +31,7 @@ const CommentsForm = ({ review_id, getComments }) => {
     e.preventDefault();
 
     {
-      const regex = /^[^\s]+(\s+[^\s]+)*$/;
+      // const regex = /^[^\s]+(\s+[^\s]+)*$/; Considering to add some regex to validate form is not white spcaces.
       comment.body.length === 0
         ? setHasError(true)
         : postCommentByReviewId(review_id, comment).then((postDataToApi) => {
@@ -76,7 +76,7 @@ const CommentsForm = ({ review_id, getComments }) => {
             rows={3}
           />{" "}
         </Form.Group>
-        {hasError && <p>Please fill the form before submitting</p>}
+        {hasError ? <p>Please fill the form before submitting</p> : null}
 
         <Button variant="primary" type="submit">
           Submit
