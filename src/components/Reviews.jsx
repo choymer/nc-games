@@ -39,7 +39,7 @@ const Reviews = () => {
               <AddVotes votes={review.votes} reviewId={review.review_id} />
 
               {/* <p>Number of comments: {review.comment_count}</p> */}
-              <Link to={`../../reviews/${review.review_id}`}>
+              <Link to={`/reviews/${review.review_id}`}>
                 See full review...
               </Link>
             </li>

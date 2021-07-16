@@ -10,12 +10,16 @@ const User = () => {
   const [getUser, setGetUser] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { username } = useParams();
+  const [hasError, setError] = "";
 
   useEffect(() => {
     getUserbyUsername(username).then((getUserFromApi) => {
       setGetUser(getUserFromApi);
       setIsLoading(false);
     });
+    // .catch((err) => {
+    //   setError(err.response.data.msg);
+    // });
   }, [username]);
 
   if (isLoading) return <SpinnerLoad />;

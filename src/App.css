@@ -45,6 +45,7 @@ ul {
 
 a {
   text-decoration: none;
+  margin: auto 15px;
 }
 
 hr {
@@ -58,7 +59,7 @@ hr {
 /****** NAVBAR ********/
 
 .dropbtn {
-  background-color: #00adb5;
+  background-color: #aad8d3;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -69,7 +70,7 @@ hr {
 .dropdown {
   position: relative;
   display: inline-block;
-  top: 40px;
+  top: -8px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -101,7 +102,7 @@ hr {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #03ccd6;
+  background-color: #00adb5;
 }
 
 .nav {
@@ -112,6 +113,7 @@ hr {
 
 .nav__left {
   display: inline-flex;
+  align-items: center;
 }
 
 .nav__link {
@@ -211,7 +213,13 @@ form {
   background-color: #eeeeee;
 }
 
+/* ****** FOOTER ********/
+
 .footer {
   background-color: #00adb5;
   padding-top: 75px;
+}
+
+small {
+  margin: 5% auto;
 }

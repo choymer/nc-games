@@ -19,11 +19,9 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div>
-        <Link className="nav__link">
-          {/* <span>{user.username}</span> */}
-          <img src={user.name} alt={user.avatar_url} />
-        </Link>
+      <div className="nav__link">
+        {/* <span>{user.username}</span> */}
+        <img src={user.name} alt={user.avatar_url} />
       </div>
     </nav>
   );
