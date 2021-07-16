@@ -28,7 +28,7 @@ const User = () => {
   return (
     <div className="content">
       {errMessage ? (
-        <p className="errMsg">{errMessage}😥</p>
+        <p className="errMsg">{errMessage} 😥</p>
       ) : (
         <>
           {" "}
