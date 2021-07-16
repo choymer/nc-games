@@ -223,3 +223,10 @@ form {
 small {
   margin: 5% auto;
 }
+
+/* ****** ERROR ********/
+
+.errMsg {
+  font-size: 25px;
+  margin: 20px auto;
+}
