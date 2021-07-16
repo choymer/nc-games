@@ -66,6 +66,8 @@ hr {
   border: none;
 }
 
+/*** DROPDOWN ***** /
+
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
@@ -233,10 +235,6 @@ small {
 }
 
 @media only screen and (max-width: 425px) {
-  .btn {
-    font-size: 12px;
-  }
-
   h1 {
     font-size: 20px;
   }
@@ -247,7 +245,8 @@ small {
 
   p,
   a,
-  .review-body {
+  .review-body,
+  .btn {
     font-size: 12px;
   }
 
@@ -255,20 +254,14 @@ small {
     justify-content: center;
   }
 
-  .user-list {
-    width: 100%;
-  }
-
-  .nav__link {
-    font-size: 1rem;
-  }
-
-  .sort {
-    font-size: 1rem;
-  }
-
+  .user-list,
   .name-input {
     width: 100%;
+  }
+
+  .nav__link,
+  .sort {
+    font-size: 1rem;
   }
 
   hr {
