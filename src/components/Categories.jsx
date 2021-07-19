@@ -12,12 +12,15 @@ const Categories = () => {
   }, []);
 
   return (
-    <div class="dropdown">
-      <button class="dropbtn">Choose category: </button>
-      <div class="dropdown-content">
+    <div className="dropdown">
+      <button className="dropbtn">Choose category: </button>
+      <div className="dropdown-content">
         {categories.map((category) => {
           return (
-            <Link to={`/reviews/categories/${category.slug}`}>
+            <Link
+              to={`/reviews/categories/${category.slug}`}
+              key={category.slug}
+            >
               {category.slug}
             </Link>
           );

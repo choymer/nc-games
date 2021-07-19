@@ -21,7 +21,6 @@ const Navbar = () => {
 
       <div className="nav__link">
         <Link to={`/`}>
-          {/* <span>{user.username}</span> */}
           <img src={user.name} alt={user.avatar_url} />
         </Link>
       </div>

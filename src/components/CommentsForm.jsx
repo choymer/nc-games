@@ -30,18 +30,16 @@ const CommentsForm = ({ review_id, getComments }) => {
   const submit = (e) => {
     e.preventDefault();
 
-    {
-      comment.body.length === 0
-        ? setHasError(true)
-        : postCommentByReviewId(review_id, comment).then((postDataToApi) => {
-            setComment({
-              username: user.username,
-              body: "",
-            });
-            setHasError(false);
-            getComments(); //Calling the function here to fetch all comments.
+    comment.body.length === 0
+      ? setHasError(true)
+      : postCommentByReviewId(review_id, comment).then((postDataToApi) => {
+          setComment({
+            username: user.username,
+            body: "",
           });
-    }
+          setHasError(false);
+          getComments(); //Calling the function here to fetch all comments.
+        });
   };
 
   return (
