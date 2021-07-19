@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getCommentsByReviewId } from "../utils/api";
 import CommentsForm from "./CommentsForm";
 import SpinnerLoad from "./SpinnerLoad";
+import DeleteComments from "./DeleteComments";
 
 const Comments = ({ review_id }) => {
   const [comments, setComments] = useState([]);
@@ -35,6 +36,7 @@ const Comments = ({ review_id }) => {
               <li className="comment" key={comment.comment_id}>
                 <h2>Author: {comment.author}</h2>
                 <p>Comment: {comment.body}</p>
+                <DeleteComments author={comment.author} />
               </li>
             );
           })}
