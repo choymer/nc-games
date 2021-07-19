@@ -54,3 +54,7 @@ export const postCommentByReviewId = async (review_id, comment) => {
 
   return data.comment;
 };
+
+export const DeleteCommentByCommentId = async (comment_id) => {
+  const { data } = await gamesApi.delete(`/comments/${comment_id}`);
+};

@@ -31,7 +31,6 @@ const CommentsForm = ({ review_id, getComments }) => {
     e.preventDefault();
 
     {
-      // const regex = /^[^\s]+(\s+[^\s]+)*$/; Considering to add some regex to validate form for no spaces at the bengining.
       comment.body.length === 0
         ? setHasError(true)
         : postCommentByReviewId(review_id, comment).then((postDataToApi) => {

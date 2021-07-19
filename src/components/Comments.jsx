@@ -36,7 +36,11 @@ const Comments = ({ review_id }) => {
               <li className="comment" key={comment.comment_id}>
                 <h2>Author: {comment.author}</h2>
                 <p>Comment: {comment.body}</p>
-                <DeleteComments author={comment.author} />
+                <DeleteComments
+                  author={comment.author}
+                  comment_id={comment.comment_id}
+                  getComments={getComments}
+                />
               </li>
             );
           })}
